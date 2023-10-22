@@ -1,24 +1,28 @@
 import java.util.*;
-public class Main {
-    /**
-     * This is the main class for a solar system simulation. It initializes and controls the simulation.
-     */
+
+/**
+ * The `Main` class is the entry point for the Solar System Model application.
+ * It creates and initializes a solar system simulation, including the sun, planets, moons, and asteroids.
+ * The simulation is then continuously updated to animate the motion of the celestial objects.
+ *
+ * @author colmantee
+ */public class Main {
     public static void main(String[] args) {
         Random random = new Random();
         SolarSystem s = new SolarSystem(900,900);
         SolarObject sun = new SolarObject(0, 0, 65, "YELLOW",s);
-        Planets mars = new Planets(155,100,20,"RED",s,20);
-        Planets earth = new Planets(105,0,30,"BLUE",s,25);
-        Planets mercury = new Planets(45,30,15,"#B7B8B9",s,40);
-        Planets venus = new Planets(70,200,25,"ORANGE",s,35);
-        Planets jupiter = new Planets(215,150,48,"#bcafb2",s,15);
-        Planets saturn = new Planets(290,300,45,"#ead6b8",s,12);
-        Planets uranus = new Planets(350,70,40,"#ACE5EE",s,8);
+        Planets mars = new Planets(155,100,20,"RED",s,35);
+        Planets earth = new Planets(105,0,30,"BLUE",s,40);
+        Planets mercury = new Planets(45,30,15,"#B7B8B9",s,70);
+        Planets venus = new Planets(70,200,25,"ORANGE",s,50);
+        Planets jupiter = new Planets(215,150,48,"#bcafb2",s,25);
+        Planets saturn = new Planets(290,300,45,"#ead6b8",s,15);
+        Planets uranus = new Planets(350,70,40,"#ACE5EE",s,9);
         Planets neptune = new Planets(400,250,35,"#4b70dd",s,6);
         Moon moon = new Moon(23,10,10,"GRAY",s, earth);
         Moon galilean = new Moon(33,10,10,"GRAY",s, jupiter);
 
-        Planets[] asteroid = new Planets[150];
+        Planets[] asteroid = new Planets[200];
 
         for (int i = 0; i < asteroid.length; i++) {
             // Adjust the distance for each asteroid to be between 170 and 180
